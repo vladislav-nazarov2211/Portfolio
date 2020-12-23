@@ -4,6 +4,7 @@ header {
     margin-right: auto;
     margin-left: auto;
     padding-top: 70px;
+    padding-bottom: 70px;
 }
 
 .header {
@@ -60,18 +61,43 @@ header {
 
 .header-nav-title {
     margin-right: 80px;
+    color: black;
+    position: relative;
+    z-index: 2;
 }
 
-.header-nav-title:last-child {
-    margin-right: 0px;
+.header-nav-title::after {
+    position: absolute;
+    content: "";
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    width: 0;
+    background-color: #fbdc4d;
+    z-index: -1;
+    transition: .5s;
+}
+
+.header-nav-title:hover::after {
+    width: 100%;
 }
 
 .header-social-icons {
     font-size: 30px;
 }
 
+.header-social-icons:last-child {
+    margin-right: 0px;
+}
+
 .header-inst, .header-YouTube {
     margin-right: 25px;
+    color: black;
+}
+
+.header-VK {
+    color: black;
 }
 
 
@@ -198,12 +224,14 @@ li::before {
 
 .header-inst-1 {
     font-size: 30px;
+    color: black;
 }
 
 .header-email {
     font-size: 24px;
     color: rgb(0, 0, 0);
     line-height: 1.2;
+    text-decoration: underline;
 }
 
   
